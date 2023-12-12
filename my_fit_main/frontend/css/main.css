@@ -19,6 +19,9 @@
   header .logo a img{
     width: 100%;
   } */
+
+  
+/* main css */
 .nav-link{
     color: black;
 }
@@ -39,4 +42,45 @@
     /* color: white; */
     text-align: center;
     text-shadow: 2px 2px #808080b3;
+    margin-top: 60px;
+}
+
+/* sub page common(food_info) */
+.sub_title{
+  position: relative;
+  padding: 10px 20px;
+  border-bottom: 1px solid #eceef2;
+}
+.sub_title h2{
+  position: relative;
+  padding-left: 30px;
+  font-size: 25px;
+  font-weight: 400;
+  color: #21222d;
+  letter-spacing: -1px;
+}
+.sub_title h2:before{
+  content: '';
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  width: 18px;
+  height: 18px;
+  background: #eceef2;
+  border-radius: 100%;
+  box-shadow: 2px 2px 3px rgba(0,0,0,0.05)
+}
+
+.container .table .none{
+  text-align: center;
+}
+
+
+/* sub page common(food_list) */
+.sub_list img{
+  width: 200px;
+}
+.sub_list span{
+  display: block;
 }
