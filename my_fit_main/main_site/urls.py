@@ -5,3 +5,4 @@ from .models import *
 urlpatterns = [
     path('',views.index,name="index"),
 ]
+
