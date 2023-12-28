@@ -1,52 +1,159 @@
-/* body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-  }
-  header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    text-align: center;
-  } */
-/* header .logo{
-    width: 36px;
-    padding: 6px;
-    float: left;
-  }
 
-  header .logo a img{
-    width: 100%;
-  } */
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap');
+/* 영문폰트 */
+/* font-family: 'Inconsolata', monospace; */
+/* font-family: 'Playfair Display', serif; 
+      font-style: italic; */
+/* 한글폰트 */
+/* font-family: 'Gowun Batang', serif; */
 
+
+body{
+  /* background: rgb(238,174,202); */
+  /* 298deg */
+  /* background: linear-gradient(90deg, rgba(238,174,202,0.698944397993311) 0%, rgba(148,187,233,0.28757316053511706) 100%); */
+}
+header{
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Gowun Batang', serif;
+  font-weight: 600;
+  margin: 6px 40px 6px 22px;
+}
+
+header .logo{
+  /* font-family: 'Playfair Display', serif; */
+  /* font-style: italic; */
+  /* font-family: 'Inconsolata', monospace;
+  font-weight: 500;
+  font-size: 25px; */
+  /* text-align: center; */
+}
+header .logo img{
+  width: 100%;
+}
+header .logo span{
+  display: block;
+  font-size: 16px;
+  margin-top: -8px;
+}
+
+header nav{
+  padding-top: 8px;
+}
+header .nav{
+  --bs-nav-link-padding-x: 1rem;
+  --bs-nav-link-padding-y: 0.5rem;
+  --bs-nav-link-color: var(--bs-body-color) ;
+  /* --bs-nav-link-hover-color: #009844; */
+  --bs-nav-link-hover-color: sienna;
+  --bs-nav-link-disabled-color: sienna;
+}
+
+footer{
+  height: 120px;
+  background: #ffecdbc7;
+  vertical-align: revert;
+}
+footer p{
+  font-weight: 500;
+  padding-top: 48px;
+}
   
 /* main css */
-.nav-link{
-    color: black;
+.video video{
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-height: 800px;
+  object-fit: cover;
+  /* object-fit: fill; */
+}
+.video .video_txt{
+  position: absolute;
+  font-family: 'Playfair Display', serif; 
+  font-style: italic;
+  font-size: 5.2vw;
+  font-weight: 500;
+  color: #fff;
+  text-shadow: #874747d9 1px 1px;
+  top: 34%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.video .video_txt span{
+  display: block;
 }
 
-.container {
-    margin-top: 50px;
+.container{
+  font-family: 'Gowun Batang', serif;
+  margin-top: 20px;
+  /* font-weight: 600; */
 }
 
-.cont_01 .img_box{
-    width: 500px;
-    height: 500px;
-    background: url(../images/main_food.jpg) no-repeat -222px -20px;
-    border-radius: 50%;
-    margin: 0 auto;
+/* index 공통 h2 css */
+.container h2{
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 30px;
+}
+.container h2::before{
+  display: block;
+  content: '';
+  width: 10px;
+  height: 10px;
+  margin-top: 14px;
+  margin-right: 6px;
+  border-radius: 0 6px 0 22px;
+  background-color: #441616d9;
+  /* background-color: #009844; */
+  float: left;
 }
 
-.cont_01 .text_box {
-    /* color: white; */
-    text-align: center;
-    text-shadow: 2px 2px #808080b3;
-    margin-top: 60px;
+.container .cont_01{
+  margin-bottom: 60px;
+}
+
+.container .search_box form{
+  margin-top: 20px;
+  display: flex;
+}
+
+.container .cont_02 ul{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.container .cont_02 ul li{
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  width: 18rem;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.container .cont_02 ul li h3{
+  font-size: 26px;
+  font-weight: 600;
+}
+.container .cont_02 ul li img{
+  width: 18rem;
+  border: 1px solid #dee2e6;
+  border-radius: 16px;
+  padding: 10px;
+}
+.container .cont_02 ul li h4{
+  font-size: 18px;
+  padding: 12px;
 }
 
 /* sub page common(food_info) */
-.sub_title{
+/* .sub_title{
   position: relative;
   padding: 10px 20px;
   border-bottom: 1px solid #eceef2;
@@ -70,14 +177,39 @@
   background: #eceef2;
   border-radius: 100%;
   box-shadow: 2px 2px 3px rgba(0,0,0,0.05)
+} */
+
+.mt20{
+  margin-top: 20px;
+}
+.mt60{
+  margin-top: 60px;
+}
+.mt80{
+  margin-top: 80px !important;
 }
 
 .container .table .none{
   text-align: center;
 }
-
+.table tr th{
+  text-align: center;
+  font-weight: 700;
+  text-indent: 6px;
+  background-color: #e2e2e2bd;
+  /* background-color: #f8f8f8; */
+}
 
 /* sub page common(food_list) */
+.sub_list{
+  display: flex;
+  flex-wrap: wrap;
+}
+.sub_list .text-center{
+  width: 18rem;
+  margin: 10px;
+  border: 1px solid #000;
+}
 .sub_list img{
   width: 200px;
 }
