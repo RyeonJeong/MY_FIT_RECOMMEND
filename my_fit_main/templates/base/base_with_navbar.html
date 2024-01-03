@@ -1,0 +1,34 @@
+{% extends "base/base.html" %}
+
+{% load static %}
+
+{% block header %}
+<header>
+    <div class="logo">
+        <a class="navbar-brand" href="{% url 'index' %}">
+            <img src="{% static 'images/logo.png' %}" alt=Logo>
+            <!-- MyFit
+            <span>Recommend</span> -->
+        </a>
+    </div>
+    <nav>
+        <!-- 네이게이션 바 만들기_부트스트랩 -->
+        <ul class="nav justify-content-end">
+            <li class="nav-item rounded">
+                <a class="nav-link active" aria-current="page"
+                    href="{% url 'food_info' %}">음식정보</a>
+            </li>
+            <li class="nav-item rounded">
+                <a class="nav-link" href="{% url 'food_list' %}">카테고리별 음식</a>
+            </li>
+            <li class="nav-item rounded">
+                <a class="nav-link" href="{% url 'food_info_detail' %}">북마크</a>
+            </li>
+            <li class="nav-item rounded">
+                <a class="nav-link" href="#">회원가입</a>
+            </li>
+        </ul>
+        <!-- 네이게이션 바 만들기_부트스트랩 끝-->
+    </nav>
+</header>
+{% endblock header %}
