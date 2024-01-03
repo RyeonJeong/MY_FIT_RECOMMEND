@@ -1,0 +1,16 @@
+{% extends "base/base.html" %}
+
+{% load static %}
+
+{% block header %}
+<header>
+    <div class="logo">
+        <a class="navbar-brand" href="{% url 'index' %}">
+            <img src="{% static 'images/logo.png' %}" alt=Logo>
+            <!-- MyFit
+            <span>Recommend</span> -->
+        </a>
+    </div>
+</header>
+
+{% endblock header %}
