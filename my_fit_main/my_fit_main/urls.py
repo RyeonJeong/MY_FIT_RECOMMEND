@@ -19,9 +19,15 @@ from django.urls import path,include
 from django.conf.urls.static import static
 from django.conf import settings
 
+# 이메일 인증 관련 
+from django.views.generic import TemplateView 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('main_site.urls')),
+
+    # django all-auth 
+    path('accounts/',include('allauth.urls')),
 ]
 
 if settings.DEBUG:

@@ -15,11 +15,22 @@ class User(AbstractUser):
 
     intro = models.CharField(max_length=60,blank=True) # 자기소개
 
+class Profile(models.Model):
+    user = models.OneToOneField(User,on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return self.nickname
+
+
 class Food(models.Model):
     name = models.CharField(max_length=100)
+    food_image = models.ImageField(upload_to='food_pics')
+
     calories = models.FloatField()  # 칼로리
     protein = models.FloatField()   # 단백질
+    
     fat = models.FloatField()       # 지방
+    
     carbohydrates = models.FloatField()  # 탄수화물
 
     def __str__(self):

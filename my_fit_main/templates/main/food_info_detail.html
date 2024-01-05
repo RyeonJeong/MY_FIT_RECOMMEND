@@ -1,48 +1,9 @@
+{% extends 'base/base_with_navbar.html' %}
+
 {% load static %}
-<!DOCTYPE html>
-<html lang="ko">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <title>Document</title>
-  <link rel="stylesheet" href="/my_fit_main/frontend/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/my_fit_main/frontend/css/main.css">
-  <script src="/my_fit_main/frontend/js/bootstrap.min.js"></script> -->
-  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-        <link rel="stylesheet" href="{% static 'css/main.css' %}">
-        <script src="{% static 'js/bootstrap.min.js'%}"></script>
-</head>
-
+{% block content %}
 <body>
-  <header>
-    <div class="logo">
-        <a class="navbar-brand" href="{% url 'index' %}">
-            <img src="{% static 'images/logo.png' %}" alt=Logo>
-            <!-- MyFit
-            <span>Recommend</span> -->
-        </a>
-    </div>
-    <nav>
-        <!-- 네이게이션 바 만들기_부트스트랩 -->
-        <ul class="nav justify-content-end">
-            <li class="nav-item rounded">
-                <a class="nav-link active" aria-current="page"
-                    href="{% url 'food_info' %}">음식정보</a>
-            </li>
-            <li class="nav-item rounded">
-                <a class="nav-link" href="{% url 'food_list' %}">카테고리별 음식</a>
-            </li>
-            <li class="nav-item rounded">
-                <a class="nav-link" href="{% url 'food_info_detail' %}">북마크</a>
-            </li>
-            <li class="nav-item rounded">
-                <a class="nav-link" href="#">회원가입</a>
-            </li>
-        </ul>
-        <!-- 네이게이션 바 만들기_부트스트랩 끝-->
-    </nav>
-</header>
   <div class="container">
       <h2>식품영양성분표</h2>
       <table class="table">
@@ -120,9 +81,5 @@
     </table>
   </div>
 
-  <footer>
-    <p class="text-center">&copy; 2023 MyFitRecommend</p>
-  </footer>
 </body>
-
-</html>
+{% endblock content %}
