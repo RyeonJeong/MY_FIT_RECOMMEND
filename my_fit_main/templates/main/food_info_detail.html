@@ -4,20 +4,30 @@
 
 {% block content %}
 <body>
-  <div class="container">
-      <h2>식품영양성분표</h2>
-      <table class="table">
-        <tbody class="table-group-divider">
-          <tr>
-            <th>식품명</th>
-            <td>메밀가공(가루), 메밀가루</td>
-          </tr>
-          <tr>
-            <th>분류</th>
-            <td>곡류 및 그 제품</td>
-          </tr>
-        </tbody>
-      </table>
+  <div class="container mt120">
+
+    {% for foods in food_list %}
+    <div class="food_image">
+      <img src="{{ foods.food_image.url }}" class="rounded" alt="{{ foods }}">
+        <h3></h3>
+
+    </div>
+    
+
+    <h2>식품영양성분표</h2>
+    <table class="table">
+      <tbody class="table-group-divider">
+        <tr>
+          <th>식품명</th>
+          <td>{{ foods.name }}</td>
+        </tr>
+        <tr>
+          <th>분류</th>
+          <td>곡류 및 그 제품</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
     <h2 class="mt80">성분분석표</h2>
     <table class="table mt20">
       <!-- <thead>
