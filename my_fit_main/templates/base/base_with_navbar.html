@@ -21,9 +21,9 @@
             <li class="nav-item rounded">
                 <a class="nav-link" href="{% url 'food_list' %}">카테고리별 음식</a>
             </li>
-            {% comment %} <li class="nav-item rounded">
-                <a class="nav-link" href="{% url 'food_info_detail' food_id.pk %}">북마크</a>
-            </li> {% endcomment %}
+            <li class="nav-item rounded">
+                <a class="nav-link" href="#">북마크</a>
+            </li> 
             {% if user.is_authenticated %}
             <li class="nav-item rounded">
                 <a class="nav-link" href="{% url 'account_logout' %}">로그아웃</a>

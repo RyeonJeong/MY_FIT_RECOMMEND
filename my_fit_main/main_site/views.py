@@ -23,7 +23,7 @@ class FoodListView(ListView):
         return context
 
 
-class FoodInfoView(DetailView):
+class FoodInfoView(ListView):
     model = Food
     template_name = 'main/food_info.html'
     pk_url_kwarg = 'food'
@@ -33,3 +33,8 @@ class FoodDetailView(DetailView):
     model = Food 
     template_name = "main/food_info_detail.html"
     pk_url_kwarg = 'food_id'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["food_list"] = Food.objects.all()
+        return context

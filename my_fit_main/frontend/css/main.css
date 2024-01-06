@@ -161,42 +161,35 @@ footer p{
   padding: 12px;
 }
 
-/* sub page common(food_info) */
-/* .sub_title{
-  position: relative;
-  padding: 10px 20px;
-  border-bottom: 1px solid #eceef2;
+/* sub_page(food_info, food_info_detail) */
+.container .food_image{
+  width: 400px;
+  min-height: 300px;
+  margin: 0 auto;
 }
-.sub_title h2{
-  position: relative;
-  padding-left: 30px;
-  font-size: 25px;
-  font-weight: 400;
-  color: #21222d;
-  letter-spacing: -1px;
+
+.container .food_image img{
+  width: 100%;
+
 }
-.sub_title h2:before{
-  content: '';
-  display: block;
-  position: absolute;
-  top: 10px;
-  left: 0px;
-  width: 18px;
-  height: 18px;
-  background: #eceef2;
-  border-radius: 100%;
-  box-shadow: 2px 2px 3px rgba(0,0,0,0.05)
-} */
+
 
 /* 공통 css */
 .mt20{
-  margin-top: 20px;
+  margin-top: 20px!important;
 }
 .mt60{
-  margin-top: 60px;
+  margin-top: 60px!important;
 }
 .mt80{
   margin-top: 80px !important;
+}
+.mt120{
+  margin-top: 120px;
+}
+
+.mb80{
+  margin-bottom: 80px!important;
 }
 /* 공통 css */
 
@@ -308,7 +301,9 @@ footer p{
   width: 100%;
   margin: 0;
 }
-
+.account .info a.item{
+  text-decoration: none;
+}
 .account .info .item {
   display: inline-block;
   min-width: 140px;
@@ -318,10 +313,14 @@ footer p{
 .account .info .item+.item {
   border-left: 1px solid #e3e1dc;
 }
+.account .info a.link{
+  text-decoration: none;
+}
 
 .account .info .link {
   margin-left: 13px;
-  color: #7bd3f7;
+  color: #239048;
+  font-weight: 600;
 }
 
 .cp-input {
@@ -355,7 +354,7 @@ a{
 
 /* 회원가입,비밀번호 찾기 감싼 태그  */
 .info {
-  color: #ffecdbc7;
+  color: #495057;
 }
 
 
