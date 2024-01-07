@@ -1,0 +1,43 @@
+{% extends "base/base_with_navbar.html" %}
+
+{% load static %}
+
+{% block title %}{{ profile_user.nickname }} | MY_FIT_RECOMMEND {% endblock title %}
+
+{% block content %}
+<div class="container mt80">
+    <div class="profile-header">
+        <div class="content max-content-width">
+            <div class="cp-avatar large profile-pic"
+                style="background-image: url('{{ profile_user.profile_pic.url }}')">
+            </div>
+            <div class="info profile-info">
+
+                <div class="intro">
+                    <h1 class="username">{{ profile_user.nickname }}</h1>
+                    <div>
+                        {% if profile_user == user %}
+                        <a class="edit" href="#">
+                            <img class="cp-icon small" src="{% static 'images/icons/pen.png' %}" alt="Pen Icon">
+                            프로필 수정
+                        </a>
+                        &#183;
+                        <a class="edit" href="{% url 'account_change_password' %}">
+                            비밀번호 변경
+                        </a>
+                        {% endif %}
+                    </div>
+                    <div>
+                        {% if profile_user.intro %}
+                        <p class="cp-chip intro">{{ profile_user.intro }}</p>
+                        {% else %}
+                        <p class="cp-chip intro">자기소개가 없습니다</p>
+                        {% endif %}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+    {% endblock content %}
