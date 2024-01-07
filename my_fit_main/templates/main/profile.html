@@ -17,7 +17,7 @@
                     <h1 class="username">{{ profile_user.nickname }}</h1>
                     <div>
                         {% if profile_user == user %}
-                        <a class="edit" href="#">
+                        <a class="edit" href="{% url 'profile-update' %}">
                             <img class="cp-icon small" src="{% static 'images/icons/pen.png' %}" alt="Pen Icon">
                             프로필 수정
                         </a>
