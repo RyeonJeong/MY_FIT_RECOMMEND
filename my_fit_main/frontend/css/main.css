@@ -350,6 +350,7 @@ a{
   background-color: #ffecdbc7;
   border: 1px solid;
   color: darkred;
+  text-decoration: none;
 }
 
 /* 회원가입,비밀번호 찾기 감싼 태그  */
@@ -601,6 +602,10 @@ a{
   height: 40px;
   background-color: var(--button-inactive-background);
   cursor: pointer;
+}
+.profile-form .profile .upload-button img{
+  width: 40px;
+  opacity: 0.6;
 }
 
 /* artist detail */
