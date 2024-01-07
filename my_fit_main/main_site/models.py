@@ -16,7 +16,9 @@ class User(AbstractUser):
     intro = models.CharField(max_length=60,blank=True) # 자기소개
 
 class Profile(models.Model):
+    intro = models.CharField(max_length=60, blank=True)
     user = models.OneToOneField(User,on_delete=models.CASCADE)
+    
     
     def __str__(self):
         return self.nickname

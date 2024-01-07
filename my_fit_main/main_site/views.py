@@ -38,3 +38,16 @@ class FoodDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context["food_list"] = Food.objects.all()
         return context
+
+class ProfileView(DetailView):
+    model = User 
+    template_name = 'main/profile.html'
+    pk_url_kwarg = 'user_id'
+
+    context_object_name = "profile_user"
+
+
+## 장고 2가지 , 1 . FBV (함수형 뷰) , CBV (클래스형 뷰)
+# def profile(requests): (함수형 뷰)
+# 함수형 def urls에 갔을 떄, path('..../',profile.views(),name='')
+# 클래스형 class ~~View(ListView,DetailView) , path('...../',views.ProfileView.as_views())
