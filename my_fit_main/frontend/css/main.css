@@ -11,25 +11,30 @@
 
 
 body{
+  caret-color: transparent; /* 커서 깜빡임 제거 */
   /* background: rgb(238,174,202); */
   /* 298deg */
   /* background: linear-gradient(90deg, rgba(238,174,202,0.698944397993311) 0%, rgba(148,187,233,0.28757316053511706) 100%); */
 }
 header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: #fff;
+  z-index: 1;
+  font-size: 18px;
   display: flex;
   justify-content: space-between;
   font-family: 'Gowun Batang', serif;
   font-weight: 600;
-  margin: 6px 40px 6px 22px;
+  padding: 6px 40px 6px 22px;
+  border-bottom: 1px solid #ddd;
 }
 
 header .logo{
-  /* font-family: 'Playfair Display', serif; */
-  /* font-style: italic; */
-  /* font-family: 'Inconsolata', monospace;
-  font-weight: 500;
-  font-size: 25px; */
-  /* text-align: center; */
+  width: 60px;
 }
 header .logo img{
   width: 100%;
@@ -63,6 +68,9 @@ footer p{
 }
   
 /* main css */
+.video{
+  margin-top: 80px;
+}
 .video video{
   position: relative;
   width: 100%;
@@ -91,6 +99,7 @@ footer p{
 .container{
   font-family: 'Gowun Batang', serif;
   margin-top: 20px;
+  min-height: 800px;
   /* font-weight: 600; */
 }
 
@@ -152,42 +161,37 @@ footer p{
   padding: 12px;
 }
 
-/* sub page common(food_info) */
-/* .sub_title{
-  position: relative;
-  padding: 10px 20px;
-  border-bottom: 1px solid #eceef2;
+/* sub_page(food_info, food_info_detail) */
+.container .food_image{
+  width: 400px;
+  min-height: 300px;
+  margin: 0 auto;
 }
-.sub_title h2{
-  position: relative;
-  padding-left: 30px;
-  font-size: 25px;
-  font-weight: 400;
-  color: #21222d;
-  letter-spacing: -1px;
-}
-.sub_title h2:before{
-  content: '';
-  display: block;
-  position: absolute;
-  top: 10px;
-  left: 0px;
-  width: 18px;
-  height: 18px;
-  background: #eceef2;
-  border-radius: 100%;
-  box-shadow: 2px 2px 3px rgba(0,0,0,0.05)
-} */
 
+.container .food_image img{
+  width: 100%;
+
+}
+
+
+/* 공통 css */
 .mt20{
-  margin-top: 20px;
+  margin-top: 20px!important;
 }
 .mt60{
-  margin-top: 60px;
+  margin-top: 60px!important;
 }
 .mt80{
   margin-top: 80px !important;
 }
+.mt120{
+  margin-top: 120px;
+}
+
+.mb80{
+  margin-bottom: 80px!important;
+}
+/* 공통 css */
 
 .container .table .none{
   text-align: center;
@@ -204,15 +208,410 @@ footer p{
 .sub_list{
   display: flex;
   flex-wrap: wrap;
+  margin: 30px 0 80px 0;
+  padding: 10px;
 }
 .sub_list .text-center{
   width: 18rem;
-  margin: 10px;
-  border: 1px solid #000;
+  margin: 10px 10px 50px 10px;
+  border: 1px solid #dee2e6;
 }
-.sub_list img{
+.sub_list .text-center:hover{
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 4px rgba(0, 0, 0, 0.2);
+  border: 1px solid #dee2e6;
+}
+.sub_list .text-center img{
+  width: 100%;
+  height: 200px;
+}
+.sub_list .text-center a{
+  text-decoration: none;
+}
+
+.sub_list .text-center h3{
+  display: block;
+  color: #111;
+  margin: 18px;
+}
+.sub_list .text-center span{
+  display: block;
+  color: #111;
+  font-size: 18px;
+  text-decoration: none;
+}
+.sub_list .text-center span.more{
+  margin: 20px;
+  /* border: 1px solid red; */
+  padding: 10px;
+  background: #75b798;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 10px;
+}
+.sub_list .text-center span.more:hover{
+  background: #519877;
+}
+
+/* account */
+
+.account-background {
+  flex-grow: 1;
+}
+
+.account-background::before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top;
+  opacity: 0.5;
+}
+
+.account {
+  margin: 200px auto;
+  max-width: 450px;
+  width: 100%;
+}
+
+.account .title {
+  margin: 24px auto;
+  text-align: center;
+}
+
+.account .logo {
   width: 200px;
 }
-.sub_list span{
+
+.account .form-error {
+  text-align: center;
+}
+
+.account .info {
+  width: max-content;
+  margin: 25px auto;
+}
+
+.account button[type="submit"] {
   display: block;
+  width: 100%;
+  margin: 0;
+}
+.account .info a.item{
+  text-decoration: none;
+}
+.account .info .item {
+  display: inline-block;
+  min-width: 140px;
+  padding: 0 21px;
+}
+
+.account .info .item+.item {
+  border-left: 1px solid #e3e1dc;
+}
+.account .info a.link{
+  text-decoration: none;
+}
+
+.account .info .link {
+  margin-left: 13px;
+  color: #239048;
+  font-weight: 600;
+}
+
+.cp-input {
+  width: 100%;
+  font-size: 17px;
+  letter-spacing: -0.3px;
+  padding: 16px 24px;
+  border: 1px solid #ffecdbc7;
+  background-color: #ffecdbc7;
+  outline: none;
+  border-radius: 7px;
+}
+
+a{
+  color: gray;
+}
+
+.cp-button {
+  border: none;
+  outline: none;
+  padding: 16px 28px;
+  border-radius: 9999px;
+  font-size: 19px;
+  font-weight: 400;
+  letter-spacing: -0.32px;
+  cursor: pointer;
+  background-color: #ffecdbc7;
+  border: 1px solid;
+  color: darkred;
+}
+
+/* 회원가입,비밀번호 찾기 감싼 태그  */
+/* .info {
+  color: #495057;
+} */
+
+
+.account form {
+  display: flex;
+  flex-direction: column;
+}
+
+.account form> :not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.account form .checkbox {
+  padding: 4px;
+  text-align: right;
+}
+
+.login-logo {
+  width: 300px;
+}
+
+.signup-logo {
+  width: 300px;
+}
+
+
+/* account-password */
+
+.account-password {
+  margin: 100px auto;
+  padding: 68px 150px;
+  max-width: 740px;
+  width: 100%;
+}
+
+.account-password .title {
+  margin: 24px auto;
+  text-align: center;
+}
+
+.account-password .heading {
+  font-size: 25px;
+  font-weight: normal;
+}
+
+.account-password form> :not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.account-password button[type="submit"] {
+  display: block;
+  width: 100%;
+  margin: 20px 0 25px;
+}
+
+.account-password-dialog {
+  margin: 100px auto;
+  text-align: center;
+  width: 100%;
+}
+
+.account-password-dialog .button {
+  margin-top: 5px;
+}
+
+.account .info .item {
+  display: inline-block;
+  min-width: 140px;
+  padding: 0 21px;
+}
+
+.account .info .item+.item {
+  border-left: 1px solid #e3e1dc;
+}
+
+
+/* profile */
+
+.profile-header .username {
+  font-size: 22px;
+  margin: 7px 9px;
+  color: #495057;
+}
+
+.profile-header .edit:first-of-type {
+  margin-left: 9px;
+}
+
+.profile-header .edit {
+  display: inline-block;
+  font-size: 16px;
+  color: #7b776b;
+  margin-bottom: 16px;
+  text-decoration: none;
+}
+
+.profile-header .edit img{
+  width: 20px;
+}
+
+.profile-header .intro {
+  margin: 0;
+  max-width: 100%;
+  overflow: hidden;
+  color: #495057;
+}
+
+.cp-chip {
+  display: inline-block;
+  padding: 0 17px;
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 32px;
+  /* color: white; */
+  border: 1px solid #e3e1dc;
+  border-radius: 9999px;
+  color: #495057;
+}
+
+.profile-header {
+  padding: 46px 10px 60px;
+  /* background: #15191cd4; */
+  position: relative;
+  border-bottom: 1px solid #ccc;
+}
+
+.profile-header .content {
+  display: flex;
+  margin: 0 auto;
+  overflow: hidden;
+  align-items: center;
+}
+
+
+.profile-header .profile-pic {
+  flex-shrink: 0;
+  margin-right: 15px;
+}
+
+
+.content-list .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 25px 15px 25px 25px;
+}
+
+.content-list {
+  margin: 72px auto 340px;
+}
+
+.content-list .header h2 {
+  font-size: 22px;
+  color: white;
+  margin: 0;
+  font-weight: 900;
+}
+
+
+/* music content */
+
+/* empty 만약 비어있을 경우 */
+
+.content-list .contents .empty {
+  margin: 120px auto;
+  font-weight: bold;
+  font-size: 40px;
+  grid-column: span 2;
+  text-align: center;
+  color: white;
+}
+
+/* profile-set */
+.profile-form {
+  margin: 100px auto;
+  max-width: 440px;
+  width: 100%;
+}
+
+.profile-form form> :not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.buttons {
+  text-align: center;
+  gap: 20px;
+}
+
+.profile-form .buttons>button[type="submit"] {
+  flex-grow: 4;
+}
+
+.profile-form .buttons> :not(:last-child) {
+  margin-right: 9px;
+}
+
+.profile-form .profile {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 26px;
+}
+
+/* avatar */
+
+.cp-avatar {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color:  #e3e1dc;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid #ddd;
+}
+
+.cp-avatar.large {
+  width: 100px;
+  height: 100px;
+}
+
+.cp-avatar.medium {
+  width: 60px;
+  height: 60px;
+}
+
+/* profile update button */
+.profile-form .profile .profile-pic {
+  position: relative;
+}
+
+.profile-form .profile input[type="file"] {
+  display: none;
+}
+
+.profile-form .profile .upload-button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: var(--button-inactive-background);
+  cursor: pointer;
+}
+
+/* artist detail */
+
+.info_detail{
+  margin: 43px 10px;
+  font-size: 35px ;
+  color: white;
+}
+
+.empty-class{
+  text-align: center;
+  align-items: center;
 }

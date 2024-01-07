@@ -1,0 +1,49 @@
+{% extends "base/base.html" %}
+
+{% load static %}
+
+{% block header %}
+<header>
+    <div class="logo">
+        <a class="navbar-brand" href="{% url 'index' %}">
+            <img src="{% static 'images/logo.png' %}" alt=Logo>
+            <!-- MyFit
+            <span>Recommend</span> -->
+        </a>
+    </div>
+    <nav>
+        <!-- 네이게이션 바 만들기_부트스트랩 -->
+        <ul class="nav justify-content-end">
+            <li class="nav-item rounded">
+                <a class="nav-link active" aria-current="page"
+                    href="#">음식정보</a>
+            </li>
+            <li class="nav-item rounded">
+                <a class="nav-link" href="{% url 'food_list' %}">카테고리별 음식</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item rounded">
+                <a class="nav-link" href="{% url 'profile' user.pk %}">북마크</a>
+            </li> 
+            <li class="nav-item rounded">
+                <a class="nav-link" href="{% url 'account_logout' %}">로그아웃</a>
+            </li>  
+            {% else %}
+            <li class="nav-item rounded">
+                <a class="nav-link" href="{% url 'account_login' %}">로그인</a>
+            </li>
+            <li class="nav-item rounded">
+                <a class="nav-link" href="{% url 'account_signup' %}">회원가입</a>
+            </li>
+            {% endif %}
+        </ul>
+        <!-- 네이게이션 바 만들기_부트스트랩 끝-->
+    </nav>
+</header>
+{% endblock header %}
+
+{% block footer %}
+<footer>
+    <p class="text-center">&copy; 2023 MyFitRecommend</p>
+  </footer>
+{% endblock footer %}
