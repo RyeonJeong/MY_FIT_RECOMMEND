@@ -2,24 +2,22 @@
 
 {% load static %}
 
-
 {% block content %}
 <body>
   <div class="container mt120">
       <h2>음식정보(빈혈편)</h2>
-    <div class="sub_list">
-      {% for foods in food_list %}
-      <div class="text-center">
+      <div class="sub_list">
+        {% for foods in food_list %}
+        <div class="text-center">
         <a href="{% url 'food_info_detail' foods.pk %}">
           <img src="{{ foods.food_image.url }}" class="rounded" alt="{{ foods }}">
           <h3>{{ foods.name }}</h3>
           <span>식품분류</span>
           <span class="more">자세히보기</span>
         </a>
-        {% endfor %}
       </div>
-     
-
+      {% endfor %}
     </div>
   </div>
+
 {% endblock content %}

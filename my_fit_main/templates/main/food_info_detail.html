@@ -12,10 +12,12 @@
         <h3></h3>
 
     </div>
+    {% endfor %}
     
 
     <h2>식품영양성분표</h2>
     <table class="table">
+      {% for foods in food_list %}
       <tbody class="table-group-divider">
         <tr>
           <th>식품명</th>
@@ -38,55 +40,56 @@
           <th scope="col">식품상세분석</th>
         </tr>
       </thead> -->
+      {% for foods in food_list %}
       <tbody class="table-group-divider">
         <tr>
           <th scope="row">1회제공량</th>
           <td>40g</td>
           <th scope="row">열량</th>
-          <td>145.2kcal</td>
+          <td>{{ foods.calories }}</td>
         </tr>
         <tr>
           <th scope="row">탄수화물</th>
-          <td>40g</td>
+          <td>{{ foods.carbohydrates }}</td>
           <th scope="row">단백질</th>
-          <td>145.2g</td>
+          <td>{{ foods.protein }}</td>
         </tr>
         <tr>
           <th scope="row">지방</th>
-          <td>40g</td>
+          <td>{{ foods.fat }}</td>
           <th scope="row">철</th>
-          <td>145.2g</td>
+          <td>{{ foods.iron }}</td>
         </tr>
         <tr>
           <th scope="row">식이섬유</th>
-          <td>40g</td>
+          <td>{{ foods.dietary_fiber }}</td>
           <th scope="row">비타민C</th>
-          <td>145.2mg</td>
+          <td>{{ foods.vitamin_c }}</td>
         </tr>
         <tr>
           <th scope="row">비타민B1</th>
-          <td>40mg</td>
+          <td>{{ foods.vitamin_b1 }}</td>
           <th scope="row">비타민B2</th>
-          <td>145.2mg</td>
+          <td>{{ foods.vitamin_b2 }}</td>
         </tr>
         <tr>
           <th scope="row">나트륨</th>
-          <td>40mg</td>
+          <td>{{ foods.sodium }}</td>
           <th scope="row">칼슘</th>
-          <!-- 콜레스테롤 -->
-          <td>145.2mg</td>
+          <td>{{ foods.calcium }}</td>
         </tr>
         <tr>
           <th scope="row">포화지방산</th>
-          <td>40g</td>
+          <td>{{ foods.saturated_fat }}</td>
           <th scope="row">트랜스지방산</th>
-          <td>145.2g</td>
+          <td>{{ foods.trans_fat }}</td>
         </tr>
         <tr class="none">
           <!-- <th></th> -->
           <td colspan="4">데이터 정보가 없습니다.</td>
           <!-- <td></td> -->
         </tr>
+        {% endfor %}
       </tbody>
     </table>
   </div>
